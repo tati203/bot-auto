@@ -3,8 +3,8 @@ var displayLobbyExists = false
 // display roleta existe
 var displayRoletaExists = false
 //variaveis de configuração
-var altosBaixosRep = 5
-var ficha = 1
+var altosBaixosRep = 7
+var ficha = 0
 var stopGain = 5
 var stopLoss = 1
 var gale = 1
@@ -101,8 +101,8 @@ function analisandoEstrategias() {
                                 inserirTextoDisplay(`GALE - NUMEROS BAIXOS`, 2)
                                 if (document.getElementsByClassName('timer').length == 1) {
                                     apostaFeita = 1
-                                    cicloGale++
-                                    for (let i = 0; i < (2 * cicloGale); i++) {
+                                    cicloGale = cicloGale * 2
+                                    for (let i = 0; i < (cicloGale); i++) {
                                         jogar('alto')
                                     }
                                 }
@@ -110,8 +110,8 @@ function analisandoEstrategias() {
                                 inserirTextoDisplay(`GALE - NUMEROS ALTOS`, 2)
                                 if (document.getElementsByClassName('timer').length == 1) {
                                     apostaFeita = 1
-                                    cicloGale++
-                                    for (let i = 0; i < (2 * cicloGale); i++) {
+                                    cicloGale = cicloGale * 2
+                                    for (let i = 0; i < (cicloGale); i++) {
                                         jogar('baixo')
                                     }
                                 }
